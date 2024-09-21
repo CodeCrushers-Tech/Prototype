@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Delhi Fire Safety CoP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>District Fire Admin Dashboard</h1>
+    </div>
+
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <ul>
+                <li><button id="pendingRequestsBtn">Pending Requests</button></li>
+                <li><button id="approvedRequestsBtn">Approved Requests</button></li>
+                <li><button id="rejectedRequestsBtn">Rejected Requests</button></li>
+            </ul>
+        </div>
+        <div class="content" id="contentArea">
+            <h2>Welcome, Admin</h2>
+            <p>Select a category from the left to view and manage requests.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Delhi Fire Safety CoP, All Rights Reserved</p>
+        <p>Developed by: Delhi IT Services</p>
+    </footer>
+
+    <script>
+        // Display Pending Requests
+        document.getElementById('pendingRequestsBtn').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h2>Pending Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Application ID</th>
+                            <th>Applicant Name</th>
+                            <th>Building Type</th>
+                            <th>Submission Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>123456</td>
+                            <td>John Doe</td>
+                            <td>Commercial</td>
+                            <td>2024-09-10</td>
+                            <td>Pending</td>
+                            <td>
+                                <button onclick="approveRequest('123456')">Approve</button>
+                                <button onclick="rejectRequest('123456')">Reject</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        });
+
+        // Approve or Reject Request
+        function approveRequest(appId) {
+            alert("Application " + appId + " approved.");
+            // Backend code can be added here to process the approval
+        }
+
+        function rejectRequest(appId) {
+            alert("Application " + appId + " rejected.");
+            // Backend code can be added here to process the rejection
+        }
+
+        // Display Approved Requests
+        document.getElementById('approvedRequestsBtn').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h2>Approved Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Application ID</th>
+                            <th>Applicant Name</th>
+                            <th>Building Type</th>
+                            <th>Submission Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>123456</td>
+                            <td>John Doe</td>
+                            <td>Commercial</td>
+                            <td>2024-09-10</td>
+                            <td>Approved</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        });
+
+        // Display Rejected Requests
+        document.getElementById('rejectedRequestsBtn').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h2>Rejected Requests</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Application ID</th>
+                            <th>Applicant Name</th>
+                            <th>Building Type</th>
+                            <th>Submission Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>654321</td>
+                            <td>Jane Doe</td>
+                            <td>Residential</td>
+                            <td>2024-09-12</td>
+                            <td>Rejected</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        });
+    </script>
+</body>
+</html>

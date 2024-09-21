@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Visit Form - Fire NOC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Field Visit Form for Fire NOC</h1>
+    </div>
+
+    <div class="form-container">
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- Token Number -->
+            <label for="tokenNumber">Application Token Number<span>*</span></label>
+            <input type="text" id="tokenNumber" name="tokenNumber" required>
+
+            <!-- General Building Information -->
+            <h3>Building Information</h3>
+            <label for="buildingType">Type of Building<span>*</span></label>
+            <select id="buildingType" name="buildingType" required>
+                <option value="">Select Building Type</option>
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Educational">Educational</option>
+                <option value="Institutional">Institutional</option>
+                <option value="Industrial">Industrial</option>
+                <option value="Assembly">Assembly</option>
+                <option value="Business">Business</option>
+                <option value="Mercantile">Mercantile</option>
+                <option value="Storage">Storage</option>
+                <option value="Hazardous">Hazardous</option>
+            </select>
+
+            <label for="buildingHeight">Height of the Building (in meters)<span>*</span></label>
+            <input type="number" id="buildingHeight" name="buildingHeight" step="0.01" required>
+
+            <label for="buildingFloors">Number of Floors<span>*</span></label>
+            <input type="number" id="buildingFloors" name="buildingFloors" required>
+
+            <label for="totalCoveredArea">Total Covered Area on All Floors (in Sq. m)<span>*</span></label>
+            <input type="number" id="totalCoveredArea" name="totalCoveredArea" step="0.01" required>
+
+            <h3>Building Accessibility</h3>
+            <label for="roadWidth">Road Width (in meters)<span>*</span></label>
+            <input type="number" id="roadWidth" name="roadWidth" step="0.01" required>
+
+            <label for="gateWidth">Gate Width (in meters)<span>*</span></label>
+            <input type="number" id="gateWidth" name="gateWidth" step="0.01" required>
+
+            <label for="internalRoadWidth">Width of Internal Road (in meters)<span>*</span></label>
+            <input type="number" id="internalRoadWidth" name="internalRoadWidth" step="0.01" required>
+
+            <!-- Exits and Staircases -->
+            <h3>Exits and Staircases</h3>
+            <label for="exitCount">Number of Exits<span>*</span></label>
+            <input type="number" id="exitCount" name="exitCount" required>
+
+            <label for="staircaseCount">Number of Staircases<span>*</span></label>
+            <input type="number" id="staircaseCount" name="staircaseCount" required>
+
+            <label for="staircaseWidth">Width of Staircases (in meters)<span>*</span></label>
+            <input type="number" id="staircaseWidth" name="staircaseWidth" step="0.01" required>
+
+            <!-- Compartmentation -->
+            <h3>Compartmentation</h3>
+            <label for="compartmentSize">Compartment Size (in Sq. m)<span>*</span></label>
+            <input type="number" id="compartmentSize" name="compartmentSize" step="0.01" required>
+
+            <label for="fireCompartmentUpperFloors">Number of Fire Compartments (Upper Floors)<span>*</span></label>
+            <input type="number" id="fireCompartmentUpperFloors" name="fireCompartmentUpperFloors" required>
+
+            <label for="fireCompartmentBasement">Number of Fire Compartments (Basement)<span>*</span></label>
+            <input type="number" id="fireCompartmentBasement" name="fireCompartmentBasement" required>
+
+            <label for="fireDampers">Fire Dampers Installed?<span>*</span></label>
+            <select id="fireDampers" name="fireDampers" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Smoke Management System -->
+            <h3>Smoke Management System</h3>
+            <label for="smokeManagement">Smoke Management System Installed?<span>*</span></label>
+            <select id="smokeManagement" name="smokeManagement" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="basementAirChange">Basement Air Changes per Hour (12 ACPH)<span>*</span></label>
+            <input type="number" id="basementAirChange" name="basementAirChange" step="1" required>
+
+            <label for="upperFloorsAirChange">Upper Floors Air Changes per Hour (12 ACPH)<span>*</span></label>
+            <input type="number" id="upperFloorsAirChange" name="upperFloorsAirChange" step="1" required>
+
+            <!-- Fire Extinguishers -->
+            <h3>Fire Extinguishers</h3>
+            <label for="fireExtinguishers">Total Number of Fire Extinguishers on Each Floor<span>*</span></label>
+            <input type="number" id="fireExtinguishers" name="fireExtinguishers" required>
+
+            <!-- First Aid Hose Reels -->
+            <h3>First Aid Hose Reels</h3>
+            <label for="hoseReels">First Aid Hose Reels Installed?<span>*</span></label>
+            <select id="hoseReels" name="hoseReels" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Pumping Arrangements -->
+            <h3>Pumping Arrangements</h3>
+            <label for="mainPumpDischarge">Discharge of Main Pump (LPM)<span>*</span></label>
+            <input type="number" id="mainPumpDischarge" name="mainPumpDischarge" step="1" required>
+
+            <label for="mainPumpHead">Head of Main Pump (in meters)<span>*</span></label>
+            <input type="number" id="mainPumpHead" name="mainPumpHead" step="1" required>
+
+            <label for="standbyPumpDischarge">Discharge of Standby Pump (LPM)<span>*</span></label>
+            <input type="number" id="standbyPumpDischarge" name="standbyPumpDischarge" step="1" required>
+
+            <label for="standbyPumpHead">Head of Standby Pump (in meters)<span>*</span></label>
+            <input type="number" id="standbyPumpHead" name="standbyPumpHead" step="1" required>
+
+            <!-- Water Storage for Firefighting -->
+            <h3>Water Storage for Firefighting</h3>
+            <label for="undergroundTankCapacity">Underground Tank Capacity (in liters)<span>*</span></label>
+            <input type="number" id="undergroundTankCapacity" name="undergroundTankCapacity" step="1" required>
+
+            <label for="overheadTankCapacity">Overhead Tank Capacity (in liters)<span>*</span></label>
+            <input type="number" id="overheadTankCapacity" name="overheadTankCapacity" step="1" required>
+
+            <!-- Fire Control Room -->
+            <h3>Fire Control Room</h3>
+            <label for="fireControlRoom">Fire Control Room Installed?<span>*</span></label>
+            <select id="fireControlRoom" name="fireControlRoom" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="fireSafetyOfficer">Fire Safety Officer Available?<span>*</span></label>
+            <select id="fireSafetyOfficer" name="fireSafetyOfficer" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Exit Signage -->
+            <h3>Exit Signage</h3>
+            <label for="exitSignage">Exit Signage Installed?<span>*</span></label>
+            <select id="exitSignage" name="exitSignage" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Document Upload -->
+            
+            <h3>Observations by Field Visit Officer</h3>
+            <label for="observations">Observations (Max 5000 characters)<span>*</span></label>
+            <textarea id="observations" name="observations" rows="5" maxlength="5000" required></textarea>
+            <!-- Submit Button -->
+             <br>
+            <div class="form-footer">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
